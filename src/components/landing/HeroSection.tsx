@@ -44,14 +44,14 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-3 mb-12">
               <Button size="xl" asChild>
-                <Link href="#diagnostic">
+                <Link href="/diagnostic">
                   Start AI Act Diagnostic
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" asChild>
-                <Link href="#contact">
-                  Book a Compliance Review
+                <Link href="/report/example">
+                  See example report
                 </Link>
               </Button>
             </div>
@@ -118,14 +118,37 @@ export default function HeroSection() {
                 ))}
               </div>
 
-              <div className="pt-1">
-                <Button size="sm" className="w-full">View Full Diagnostic Report →</Button>
+              <div className="pt-1 flex gap-2">
+                <Button size="sm" className="flex-1" asChild>
+                  <Link href="/diagnostic">Start diagnostic →</Link>
+                </Button>
+                <Button size="sm" variant="outline" asChild>
+                  <Link href="/report/example">See example</Link>
+                </Button>
               </div>
             </div>
 
-            {/* Floating label */}
-            <div className="absolute -bottom-4 -left-4 bg-emerald-500 text-white rounded-xl px-4 py-2 shadow-lg text-sm font-semibold">
-              Generated from your docs in minutes
+            {/* Floating: docs processed */}
+            <div className="absolute -bottom-5 -left-5 bg-white border border-slate-200 rounded-2xl shadow-xl p-3.5 flex items-center gap-3">
+              <div className="flex -space-x-2">
+                {[
+                  { label: "PDF", bg: "bg-red-50", text: "text-red-500", border: "border-red-100" },
+                  { label: "DPA", bg: "bg-blue-50", text: "text-blue-500", border: "border-blue-100" },
+                  { label: "ISO", bg: "bg-emerald-50", text: "text-emerald-600", border: "border-emerald-100" },
+                  { label: "+4", bg: "bg-slate-100", text: "text-slate-400", border: "border-slate-200" },
+                ].map((d) => (
+                  <div key={d.label} className={`w-8 h-8 ${d.bg} border-2 border-white rounded-lg flex items-center justify-center text-[9px] font-black ${d.text} shadow-sm`}>
+                    {d.label}
+                  </div>
+                ))}
+              </div>
+              <div>
+                <p className="text-xs font-bold text-slate-900">7 docs analyzed</p>
+                <div className="flex items-center gap-1 mt-0.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <p className="text-[11px] text-emerald-600 font-semibold">Generated in 2m 41s</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

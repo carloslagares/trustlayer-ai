@@ -46,8 +46,8 @@ export default function Navbar() {
             <Button variant="ghost" size="sm">
               Sign in
             </Button>
-            <Button size="sm">
-              Start Diagnostic
+            <Button size="sm" asChild>
+              <Link href="/diagnostic">Start Diagnostic</Link>
             </Button>
           </div>
 
