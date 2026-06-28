@@ -5,10 +5,10 @@ import { Menu, X, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "Diagnostic", href: "#diagnostic" },
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Use cases", href: "#use-cases" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Diagnostic", href: "/diagnostic" },
+  { label: "Example report", href: "/report/example" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Blog", href: "/blog" },
 ]
 
 export default function Navbar() {
